@@ -20,7 +20,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 import { useState, useEffect } from "react";
 import ExperienceArray from "./ExperienceArray";
 import TagsArray from "./TagsArray";

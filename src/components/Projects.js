@@ -16,7 +16,7 @@ import {
   Link,
   Center,
 } from "@chakra-ui/react";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 import { useState } from "react";
 import ProjectsArray from "./ProjectsArray";
 import OtherProjectsArray from "./OtherProjectsArray";
