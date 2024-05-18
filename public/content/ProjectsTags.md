@@ -1,5 +1,3 @@
 Development
 Design
-Frontend
-Backend
-Print
+Other

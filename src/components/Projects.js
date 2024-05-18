@@ -53,7 +53,7 @@ export default function Projects({ color }) {
           </Stack>
           <Stack px={4} spacing={4}>
             {projects.map((project) => (
-              <Fade bottom>
+              <Fade bottom key={project.name+Math.random()}>
                 <Card
                   key={project.name}
                   direction={{
@@ -62,9 +62,9 @@ export default function Projects({ color }) {
                   overflow="hidden"
                 >
                   <Image objectFit="cover" src={project.image} />
-
                   <Stack>
                     <CardBody align="left">
+                      <Text pb={2} align='left'>{project.year}</Text>
                       <Heading size="md">{project.name}</Heading>
 
                       <Text py={2}>{project.description}</Text>
@@ -78,11 +78,12 @@ export default function Projects({ color }) {
                           </a>
                         ))}
                       </HStack>
-                      <HStack pt={4} spacing={2}>
+                      <HStack pt={4} flexWrap='wrap' rowGap={2} columnGap={2} spacing={0}>
                         {project.badges.map((badge) => (
                           <Badge
                             key={badge.text}
                             colorScheme={badge.colorScheme}
+                            spacing={2}
                           >
                             {badge.text}
                           </Badge>
@@ -109,6 +110,7 @@ export default function Projects({ color }) {
                 <Button
                   colorScheme={selected === option.value ? `${color}` : "gray"}
                   onClick={() => handleSelected(option.value)}
+                  key={option.value}
                 >
                   {option.value}
                 </Button>
@@ -125,33 +127,32 @@ export default function Projects({ color }) {
                 }
               })
               .map((other) => (
-                <Fade bottom>
-                  <Card key={other.name}>
+                <Fade bottom key={other.name+Math.random()}>
+                  <Card >
+                    <Image objectFit="cover" src={other.image} />
                     <Stack>
-                      <Image objectFit="cover" src={other.image} />
                       <CardBody align="left" h={[null, "40vh"]}>
+                        <Text pb={1} align='left'>{other.year}</Text>
                         <Heading size="sm">{other.name}</Heading>
-
-                        <HStack spacing={2}>
-                          {other.buttons.map((button) => (
-                            <Link
-                              key={button.text}
-                              href={button.href}
-                              color={`${color}.400`}
-                            >
-                              {button.text}
-                            </Link>
-                          ))}
-                        </HStack>
-                        <HStack flexWrap="wrap" pt={4} spacing={2}>
+                        <HStack pt={4} flexWrap='wrap' rowGap={2} columnGap={2} spacing={0}>
                           {other.badges.map((badge) => (
                             <Badge
-                              my={2}
                               key={badge.text}
                               colorScheme={badge.colorScheme}
                             >
                               {badge.text}
                             </Badge>
+                          ))}
+                        </HStack>
+                        <HStack pt={4} spacing={2}>
+                          {other.buttons.map((button) => (
+                              <Link
+                                  key={button.text}
+                                  href={button.href}
+                                  color={`${color}.400`}
+                              >
+                                {button.text}
+                              </Link>
                           ))}
                         </HStack>
                       </CardBody>

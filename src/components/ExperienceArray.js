@@ -15,8 +15,6 @@ const parseExperience = (mdContent) => {
         .map((s) => s.trim());
       const position = positionLine[0].slice(1, -1);
       const duration = positionLine[1].trim();
-      const imageLine = lines[++i];
-      const image = imageLine.match(/!\[(.*)\]\((.*)\)/)[2];
       const tags = lines[++i].split(":")[1].trim();
       const badges = [];
       const listItems = [];
@@ -34,13 +32,12 @@ const parseExperience = (mdContent) => {
       }
 
       experience.push({
-        image,
         company,
         position,
         duration,
+        tags: [tags],
         badges,
         listItems,
-        tags,
       });
     }
   }

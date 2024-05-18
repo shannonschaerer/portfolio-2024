@@ -11,7 +11,6 @@ import {
   CardFooter,
   Flex,
   Badge,
-  Image,
   List,
   ListItem,
   ListIcon,
@@ -28,13 +27,7 @@ import TagsArray from "./TagsArray";
 export default function Experience({ color }) {
   const experience = ExperienceArray();
   const options = TagsArray("ExperienceTags");
-  const [selected, setSelected] = useState("");
-
-  useEffect(() => {
-    if (options.length > 0) {
-      setSelected(options[0].value);
-    }
-  }, [options]);
+  const [selected, setSelected] = useState("All");
   
   const handleSelected = (value) => {
     setSelected(value);
@@ -60,26 +53,41 @@ export default function Experience({ color }) {
           </Stack>
           <Center px={4}>
             <ButtonGroup variant="outline">
+              <Button
+                  colorScheme={selected === "All" ? `${color}` : "gray"}
+                  onClick={() => handleSelected("All")}
+              >
+                All
+              </Button>
               {options.map((option) => (
-                <Button
-                  colorScheme={selected === option.value ? `${color}` : "gray"}
-                  onClick={() => handleSelected(option.value)}
-                >
-                  {option.value}
-                </Button>
+                  <Button
+                      colorScheme={selected === option.value ? `${color}` : "gray"}
+                      onClick={() => handleSelected(option.value)}
+                      key={option.value}
+                  >
+                    {option.value}
+                  </Button>
               ))}
             </ButtonGroup>
           </Center>
           <Stack px={4} spacing={4}>
             {experience
-              .filter((exp) => exp.tags.includes(selected))
+              .filter((exp) => {
+                if (selected === "All") {
+                  console.log('2')
+                  return true;
+                } else {
+                  console.log('3')
+                  console.log(selected)
+                  return exp.tags.includes(selected);
+                }
+              })
               .map((exp) => (
-                <Fade bottom>
-                  <Card key={exp.company} size="sm">
+                <Fade bottom key={exp.company+Math.random()}>
+                  <Card size="sm">
                     <CardHeader>
                       <Flex justifyContent="space-between">
                         <HStack>
-                          <Image src={exp.image} h={50} />
                           <Box px={2} align="left">
                             <Text fontWeight={600}>{exp.company}</Text>
                             <Text>{exp.position}</Text>

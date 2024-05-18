@@ -1,4 +1,3 @@
-Web Development
-Web Design
-Print Design
+Development
+Design
 Other
