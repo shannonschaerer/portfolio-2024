@@ -128,12 +128,9 @@ export default function Projects({ color }) {
                 <Fade bottom>
                   <Card key={other.name}>
                     <Stack>
+                      <Image objectFit="cover" src={other.image} />
                       <CardBody align="left" h={[null, "40vh"]}>
                         <Heading size="sm">{other.name}</Heading>
-
-                        <Text fontSize="sm" py={2}>
-                          {other.description}
-                        </Text>
 
                         <HStack spacing={2}>
                           {other.buttons.map((button) => (

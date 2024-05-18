@@ -1,7 +1,7 @@
 ## Company 1
 - *Role* | Jan'23 - Feb'23
 - ![logo512](../assets/logo512.png)
-- Tags: Category 1
+- Tags: Web Development, Web Design
 - Badges:
   - Badge [blue]
 - List Items:
@@ -11,7 +11,7 @@
 ## Company 2
 - *Role* | Feb'23 - Mar'23
 - ![logo512](../assets/logo512.png)
-- Tags: Category 2
+- Tags: Print Design
 - Badges:
   - Badge [blue]
 - List Items:
@@ -21,7 +21,7 @@
 ## Company 3
 - *Role* | Mar'23 - Apr'23
 - ![logo512](../assets/logo512.png)
-- Tags: Category 3
+- Tags: Other
 - Badges:
   - Badge [blue]
 - List Items:

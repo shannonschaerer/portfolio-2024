@@ -51,12 +51,6 @@ export default function Header({ color }) {
               {profile.headerRole}
             </Text>
           </Heading>
-          <Text
-            color={"gray.500"}
-            fontSize={{ base: "lg", sm: "xl", md: "2xl" }}
-          >
-            {profile.headerDesc}
-          </Text>
           <Stack
             direction={"column"}
             spacing={3}

@@ -1,23 +1,43 @@
-## Project 1
-Description
-- Tags: Category 1
+## Kanzlei Pilatushof
+- ![Schmuckwek Homepage](../assets/other-projects/schmuck-desktop.webp)
+- Tags: Web Development
 - Badges:
-  - Badge [blue]
+  - Development [blue]
+  - Webpack [green]
+  - Craft CMS [red]
+  - Gitlab CI/CD [orange]
 - Buttons:
-  - Link [https://example.com]
+  - View Website [https://www.schmuck-werk.ch/]
 
-## Project 2
-Description
-- Tags: Category 2
+## Schmuckwerk
+- ![Schmuckwek Homepage](../assets/other-projects/schmuck-desktop.webp)
+- Tags: Web Development
 - Badges:
-  - Badge [blue]
+  - Development [blue]
+  - Webpack [green]
+  - Craft CMS [red]
+  - Gitlab CI/CD [orange]
 - Buttons:
-  - Link [https://example.com]
+  - View Website [https://www.schmuck-werk.ch/]
 
-## Project 3
-Description
-- Tags: Category 3
+## Immotelli
+- ![Immotelli Homepage](../assets/other-projects/immo-desktop.webp)
+- Tags: Web Development
 - Badges:
-  - Badge [blue]
+  - Development [blue]
+  - Webpack [green]
+  - Grav [purple]
+  - Gitlab CI/CD [orange]
 - Buttons:
-  - Link [https://example.com]
+  - View Website [https://www.immotelli.ch/]
+
+## Reformierte Kirchen im Aargau
+- ![Reformierte Kirchen im Aargau Homepage](../assets/other-projects/ref-kirchen-desktop.webp)
+- Tags: Web Development
+- Badges:
+  - Development [blue]
+  - Webpack [green]
+  - Grav [purple]
+  - Gitlab CI/CD [orange]
+- Buttons:
+  - Link [https://www.ref-kirchen-ag.ch/]
