@@ -17,6 +17,7 @@ import {
 import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 import ProfileArray from "./ProfileArray";
+import Logo from "./Logo";
 const TbIcons = require("react-icons/tb");
 
 export default function Nav({ color }) {
@@ -88,9 +89,7 @@ export default function Nav({ color }) {
       >
         <Link onClick={scrollToHero}>
           <HStack>
-            {TbLetterComponents.map((Component, index) => (
-              <Component key={index} color={colors[color]} />
-            ))}
+            <Logo />
           </HStack>
         </Link>
 
@@ -114,7 +113,7 @@ export default function Nav({ color }) {
             ) : (
               <></>
             )}
-            <Button onClick={toggleColorMode}>
+            <Button variant='link' onClick={toggleColorMode}>
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </Button>
 

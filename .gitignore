@@ -1,5 +1,7 @@
 node_modules
 .DS_Store
 .idea
+build
+build.zip
 public/assets/other-projects/*
 public/assets/web-projects/*

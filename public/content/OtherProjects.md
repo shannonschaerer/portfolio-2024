@@ -1,7 +1,7 @@
 ## Kanzlei Pilatushof [Collab]
 2024
 - ![Kanzlei Pilatushof Homepage](../assets/other-projects/pilatushof-desktop.webp)
-- Tags: Development, Design
+- Tags: Development,Design
 - Badges:
   - Development [cyan]
   - Design [yellow]
@@ -199,7 +199,7 @@
 ## Construction Steel, Inc.
 2016
 - ![Construction Steel, Inc. Logo](../assets/other-projects/csi_logo.webp)
-- Tags: Other
+- Tags: Design,Other
 - Badges:
   - Design [yellow]
   - Print [gray]
@@ -219,7 +219,7 @@
 ## Bob Finance
 2016
 - ![Bob Finance Bobs](../assets/other-projects/bobs.webp)
-- Tags: Other
+- Tags: Design,Other
 - Badges:
   - Design [yellow]
   - Print [gray]
@@ -228,7 +228,7 @@
 ## Hackathon - Valora
 2016
 - ![Hackathon Poster](../assets/other-projects/hackathon_poster.webp)
-- Tags: Other
+- Tags: Design,Other
 - Badges:
   - Design [yellow]
   - Print [gray]
@@ -237,7 +237,7 @@
 ## Hackathon - Valora
 2016
 - ![Hackathon Visuals](../assets/other-projects/hakathon_visuals.webp)
-- Tags: Other
+- Tags: Design,Other
 - Badges:
   - Design [yellow]
   - Print [gray]
@@ -262,7 +262,7 @@
 ## Airproduct AG
 2015
 - ![Airproduct AG Broschure](../assets/other-projects/airproduct-broschure.webp)
-- Tags: Other
+- Tags: Design,Other
 - Badges:
   - Design [yellow]
   - Print [gray]
@@ -271,7 +271,7 @@
 ## Airproduct AG
 2015
 - ![Airproduct AG Catalogue](../assets/other-projects/airproduct_katalog.webp)
-- Tags: Other
+- Tags: Design,Other
 - Badges:
   - Design [yellow]
   - Print [gray]

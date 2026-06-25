@@ -55,7 +55,7 @@ A fun website built with Craft CMS for one of the largest markets of it's kind i
   - Craft CMS [red]
   - Gitlab CI/CD [orange]
 - Buttons:
-  - Link [https://www.rueblimaert-aarau.ch/]
+  - View Website [https://www.rueblimaert-aarau.ch/]
 
 ## Unterwegs Aarau
 2021

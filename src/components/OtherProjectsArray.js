@@ -12,7 +12,8 @@ const parseOtherProjects = (mdContent) => {
       const year = lines[++i].trim();
       const imageLine = lines[++i];
       const image = imageLine.match(/!\[(.*)\]\((.*)\)/)[2];
-      const tags = lines[++i].split(":")[1].trim();
+      const tagLine = lines[++i].split(":")[1].trim()
+      const tags = tagLine.split(",");
       const badges = [];
       const buttons = [];
 

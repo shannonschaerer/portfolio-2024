@@ -1,7 +1,7 @@
 // theme.js
 
 // 1. import `extendTheme` function
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, defineStyleConfig } from "@chakra-ui/react";
 import '@fontsource/raleway';
 
 // 2. Add your color mode config
@@ -16,7 +16,14 @@ const fonts = {
   body: `'Raleway', sans-serif`,
 }
 
+const Button = defineStyleConfig({
+  baseStyle: {
+    borderRadius: 'none'
+  },
+})
+
+
 // 3. extend the theme
-const theme = extendTheme({ config, fonts });
+const theme = extendTheme({ config, fonts, components: { Button } });
 
 export default theme;

@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import ProfileArray from "./ProfileArray";
+import { Email } from "react-obfuscate-email";
 
 export default function Contact({ color }) {
   const profile = ProfileArray();
@@ -45,14 +46,18 @@ export default function Contact({ color }) {
             <Text color={"gray.600"} fontSize={"xl"} px={4}>
               {profile.contact}
             </Text>
-            <Text color={`${color}.500`} fontWeight={600} fontSize={"lg"} px={4}>
-              {profile.email}
-            </Text>
+            <Center>
+              <HStack pt={4} spacing={4} color={`${color}.500`} fontWeight={600} fontSize={"lg"} px={4}>
+                <FaEnvelope onClick={email} size={28} />
+                <Email email={profile.email}>
+                  Email Me!
+                </Email>
+              </HStack>
+            </Center>
             <Center>
               <HStack pt={4} spacing={4}>
                 <FaLinkedin onClick={linkedin} size={28} />
                 <FaGithub onClick={github} size={28} />
-                <FaEnvelope onClick={email} size={28} />
               </HStack>
             </Center>
           </Stack>

@@ -1,0 +1,11 @@
+.logo {
+    height: 40px;
+    max-height: 100%;
+    width: auto;
+}
+.lightMode {
+    fill: var(--chakra-colors-gray-800);
+}
+.darkMode {
+    fill: var(--chakra-colors-white);
+}

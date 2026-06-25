@@ -60,6 +60,7 @@ export default function Projects({ color }) {
                     base: "column",
                   }}
                   overflow="hidden"
+                  borderRadius='none'
                 >
                   <Image objectFit="cover" src={project.image} />
                   <Stack>
@@ -100,6 +101,7 @@ export default function Projects({ color }) {
           </Text>
           <Center px={4}>
             <ButtonGroup variant="outline">
+              <HStack flexWrap='wrap' rowGap={2} columnGap={2} spacing={0}>
               <Button
                 colorScheme={selected === "All" ? `${color}` : "gray"}
                 onClick={() => handleSelected("All")}
@@ -115,6 +117,7 @@ export default function Projects({ color }) {
                   {option.value}
                 </Button>
               ))}
+              </HStack>
             </ButtonGroup>
           </Center>
           <SimpleGrid columns={[1, 2, 3]} px={4} spacing={4}>
@@ -123,12 +126,12 @@ export default function Projects({ color }) {
                 if (selected === "All") {
                   return true;
                 } else {
-                  return other.tags.includes(selected);
+                  return other.tags[0].includes(selected);
                 }
               })
               .map((other) => (
                 <Fade bottom key={other.name+Math.random()}>
-                  <Card >
+                  <Card borderRadius='none'>
                     <Image objectFit="cover" src={other.image} />
                     <Stack>
                       <CardBody align="left" h={[null, "40vh"]}>

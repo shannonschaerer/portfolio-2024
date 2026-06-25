@@ -34,7 +34,7 @@ export default function About({ color }) {
             >
               {profile.headerDesc}
             </Text>
-            <Text color={"gray.400"} fontSize={"xl"} px={4}>
+            <Text color={"gray.400"} fontSize={"xl"} px={4} whiteSpace='break-spaces'>
               {profile.about}
             </Text>
           </Stack>

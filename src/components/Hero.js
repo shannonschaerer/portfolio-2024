@@ -91,11 +91,11 @@ export default function Header({ color }) {
                 fontSize={"lg"}
                 fontFamily={"Caveat"}
                 position={"absolute"}
-                right={"-85px"}
+                right={"-115px"}
                 top={"-15px"}
                 transform={"rotate(10deg)"}
               >
-                Click me!
+                LinkedIn Profile
               </Text>
             </Box>
           </Stack>
