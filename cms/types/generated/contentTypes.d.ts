@@ -452,6 +452,7 @@ export interface ApiProfileProfile extends Struct.SingleTypeSchema {
   };
   attributes: {
     About: Schema.Attribute.Text;
+    Availability: Schema.Attribute.Component<'profile.availability', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -464,6 +465,7 @@ export interface ApiProfileProfile extends Struct.SingleTypeSchema {
       'api::profile.profile'
     > &
       Schema.Attribute.Private;
+    Logo: Schema.Attribute.Component<'profile.logo', false>;
     Name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Tagline: Schema.Attribute.String;

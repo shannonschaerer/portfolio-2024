@@ -32,6 +32,16 @@
     },
     "Email": {
       "type": "email"
+    },
+    "Logo": {
+      "type": "component",
+      "component": "profile.logo",
+      "repeatable": false
+    },
+    "Availability": {
+      "type": "component",
+      "component": "profile.availability",
+      "repeatable": true
     }
   }
 }
