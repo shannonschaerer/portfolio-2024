@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "profiles",
+  "info": {
+    "singularName": "profile",
+    "pluralName": "profiles",
+    "displayName": "Profile"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Tagline": {
+      "type": "string"
+    },
+    "About": {
+      "type": "text"
+    },
+    "LinkedIn": {
+      "type": "component",
+      "component": "profile.linked-in",
+      "repeatable": false
+    },
+    "Github": {
+      "type": "component",
+      "component": "profile.github",
+      "repeatable": false
+    },
+    "Email": {
+      "type": "email"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_profile_logos",
+  "info": {
+    "displayName": "Logo",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    },
+    "Logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

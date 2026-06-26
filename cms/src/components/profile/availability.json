@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_profile_availabilities",
+  "info": {
+    "displayName": "Availability",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "openToWork": {
+      "type": "boolean"
+    },
+    "freelanceAvailable": {
+      "type": "boolean"
+    },
+    "notAvailable": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

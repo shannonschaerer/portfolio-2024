@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_project_tags",
+  "info": {
+    "displayName": "Tags",
+    "icon": "priceTag"
+  },
+  "options": {},
+  "attributes": {
+    "Development": {
+      "type": "boolean"
+    },
+    "Design": {
+      "type": "boolean"
+    },
+    "Other": {
+      "type": "boolean"
+    },
+    "Collaboration": {
+      "type": "boolean"
+    },
+    "Collaborators": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

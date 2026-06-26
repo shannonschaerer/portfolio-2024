@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_project_badges",
+  "info": {
+    "displayName": "Badge",
+    "icon": "shield"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
