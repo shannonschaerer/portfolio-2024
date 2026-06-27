@@ -8,6 +8,9 @@
   "attributes": {
     "Label": {
       "type": "string"
+    },
+    "Color": {
+      "type": "string"
     }
   },
   "config": {}

@@ -54,6 +54,7 @@ export interface ProjectBadge extends Struct.ComponentSchema {
     icon: 'shield';
   };
   attributes: {
+    Color: Schema.Attribute.String;
     Label: Schema.Attribute.String;
   };
 }
