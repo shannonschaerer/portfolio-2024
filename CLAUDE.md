@@ -32,28 +32,44 @@ Everything runs locally for now. No deployment configuration until the site is r
 
 ## Content model (Strapi)
 
-### Project
-One unified content type for all projects. The `featured` field controls display — featured projects render as large cards at the top, all others appear in the filterable grid below.
+### API response format (Strapi v5)
+Strapi v5 returns flat objects — no `data.attributes` wrapper. Responses look like:
+```json
+{ "data": { "id": 1, "documentId": "abc123", "Name": "...", ... }, "meta": {} }
+```
+For collections, `data` is an array of those flat objects. Field names match the Strapi schema exactly — PascalCase throughout.
 
-- `name` (string, required)
-- `year` (string)
-- `description` (text, optional)
-- `image` (media)
-- `featured` (boolean, default false)
-- `tags` (enumeration: Development, Design, Other — multi-select)
-- `badges` (component: array of { label: string, color: string })
-- `buttons` (component: array of { text: string, url: string })
+### Project
+One unified content type for all projects. The `Featured` field controls display — featured projects render as large cards at the top, all others appear in the filterable grid below.
+
+- `Name` (string, required)
+- `Description` (text)
+- `Featured` (boolean)
+- `Image` (media)
+- `Year` (enumeration: `y2010`–`y2030`)
+- `Tags` (component, single: `{ Development, Design, Collaboration, Other: boolean; Collaborators: string }`)
+- `Badge` (component, repeatable: `{ Label: string, Color: string }`)
+- `Button` (component, single — not an array: `{ Label: string, URL: string }`)
+
+### Experience
+- `Company` (string)
+- `Role` (string)
+- `StartDate` (string)
+- `EndDate` (string)
+- `Location` (string)
+- `Responsibilities` (text)
+- `Badges` (component, repeatable: `{ Label: string, Color: string }`)
 
 ### Profile
-- `siteName` (string)
-- `headerName` (string)
-- `headerRole` (string)
-- `tagline` (string)
-- `about` (rich text)
-- `linkedin` (string)
-- `github` (string)
-- `email` (string)
-- `logo` (string)
+- `Name` (string)
+- `Role` (string)
+- `Tagline` (string)
+- `About` (text)
+- `Email` (email)
+- `Github` (component, single: `{ URL: string }`)
+- `LinkedIn` (component, single: `{ URL: string }`)
+- `Logo` (component, single: `{ Label: string, Logo: media }`)
+- `Availability` (component, repeatable: `{ openToWork, freelanceAvailable, notAvailable: boolean }`)
 
 ## What we're building
 A project showcase site for a web developer based in Switzerland. The existing site is a Create React App using Chakra UI, Bootstrap, and Markdown files for content. We are replacing it entirely with the stack above. The existing content (projects, profile, contact info) will be migrated to Strapi.
