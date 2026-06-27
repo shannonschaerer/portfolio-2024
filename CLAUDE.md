@@ -4,7 +4,9 @@
 I'm Shannon. I have prior coding experience but have been away from active development for a couple of years. I'm intentionally working at the edge of my current competency — this project is both a deliverable and a learning exercise. Plain-language explanations alongside technical steps are essential, not optional.
 
 ## How we work together
-1. **Always show a plan before writing any code.** Describe what you're going to do, which files you'll create or modify, and why. Wait for my explicit approval before proceeding.
+1. **Always show a plan before writing any code.** Describe what you're going to do, which files you'll create or modify, and why. Wait for my explicit approval before proceeding. Save every plan to docs/plans/ as a markdown file before 
+  writing any code. Use the task name as the filename e.g. 
+  docs/plans/data-fetching.md
 2. **Explain what you're doing in plain language.** Not just what the code does, but why it's structured that way. Treat every non-obvious decision as a teaching moment.
 3. **One step at a time.** Don't chain multiple major changes together. Complete one thing, let me review it, then move on.
 4. **Ask before installing dependencies.** Tell me what the package does and why we need it before adding it.
@@ -63,6 +65,13 @@ A project showcase site for a web developer based in Switzerland. The existing s
 - No `any` types if we introduce TypeScript later.
 - Accessibility audit every component before marking it done.
 - The old Chakra/Bootstrap dependencies are being removed entirely — do not reference them.
+
+# Global Rules
+- Always show a plan and wait for explicit approval before writing any code
+- Never run git commands — I handle all commits myself
+- Explain what you're doing in plain language alongside technical steps
+- One step at a time — complete one thing, let me review, then move on
+- Ask before installing any dependencies
 
 ## Current status
 Starting from scratch. The old React app is the reference for content and structure only — not for code patterns.
