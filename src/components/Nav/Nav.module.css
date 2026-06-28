@@ -11,7 +11,7 @@
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   max-width: var(--content-max-w);
   height: 100%;
   margin-inline: auto;
@@ -19,7 +19,7 @@
 }
 
 .logo {
-  font-size: var(--font-size-lg);
+  font-size: var(--text-lg);
   font-weight: 700;
   color: var(--color-text);
   text-decoration: none;
@@ -27,7 +27,7 @@
 }
 
 .logo:hover {
-  color: var(--color-accent);
+  color: var(--color-text-muted);
 }
 
 .links {
@@ -35,14 +35,15 @@
   align-items: center;
   gap: var(--space-1);
   list-style: none;
+  margin-inline-start: auto;
 }
 
 .link {
-  font-size: var(--font-size-sm);
-  font-weight: 500;
+  font-size: var(--text-sm);
+  font-weight: 400;
   color: var(--color-text-muted);
   text-decoration: none;
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-md);
   transition: color 0.15s ease, background-color 0.15s ease;
 }
@@ -60,7 +61,7 @@
 */
 @media (max-width: 640px) {
   .link {
-    padding: var(--space-2);
-    font-size: 0.8rem;
+    padding: var(--space-1);
+    font-size: var(--text-xs);
   }
 }

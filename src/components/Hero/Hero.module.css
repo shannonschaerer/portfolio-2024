@@ -1,5 +1,5 @@
 .section {
-  padding-block: var(--space-24);
+  padding-block: var(--space-16);
 }
 
 .inner {
@@ -8,17 +8,17 @@
   padding-inline: var(--content-padding);
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: var(--space-4);
 }
 
 .text {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-2);
 }
 
 .role {
-  font-size: var(--font-size-base);
+  font-size: var(--text-base);
   color: var(--color-text-muted);
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -26,15 +26,16 @@
 }
 
 .name {
-  font-size: var(--font-size-4xl);
-  font-weight: 700;
-  line-height: 1.1;
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: 400;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--color-text);
 }
 
 .tagline {
-  font-size: var(--font-size-xl);
+  font-size: var(--text-xl);
   color: var(--color-text-muted);
   max-width: 36ch;
   line-height: 1.5;
@@ -43,47 +44,48 @@
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-4);
+  gap: var(--space-2);
   align-items: center;
 }
 
 .btnPrimary,
 .btnSecondary {
   display: inline-block;
-  padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius-md);
-  font-size: var(--font-size-base);
-  font-weight: 600;
+  padding: var(--space-1) var(--space-3);
+  border-radius: 0;
+  font-size: var(--text-base);
+  font-weight: 500;
   text-decoration: none;
-  transition: opacity 0.15s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .btnPrimary {
   background-color: var(--color-accent);
-  color: #ffffff;
+  color: var(--color-on-accent);
 }
 
 .btnPrimary:hover {
-  opacity: 0.88;
+  background-color: var(--color-text);
 }
 
 .btnSecondary {
   background-color: transparent;
   color: var(--color-text);
-  border: 1.5px solid var(--color-border);
+  border: 1px solid var(--color-text);
 }
 
 .btnSecondary:hover {
-  border-color: var(--color-text-muted);
+  background-color: var(--color-text);
+  color: var(--color-bg);
 }
 
 @media (max-width: 640px) {
   .name {
-    font-size: var(--font-size-3xl);
+    font-size: var(--text-3xl);
   }
 
   .tagline {
-    font-size: var(--font-size-lg);
+    font-size: var(--text-lg);
   }
 
   .btnPrimary,

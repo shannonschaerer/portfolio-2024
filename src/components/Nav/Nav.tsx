@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 import styles from "./Nav.module.css";
 
 export default function Nav() {
@@ -17,6 +18,7 @@ export default function Nav() {
             </li>
           ))}
         </ul>
+        <ThemeToggle />
       </nav>
     </header>
   );
