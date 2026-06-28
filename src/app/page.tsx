@@ -1,4 +1,5 @@
 import { getProfile, getProjects, getExperiences } from '@/lib/strapi';
+import Hero from '@/components/Hero/Hero';
 
 export default async function Home() {
   const [profile, projects, experiences] = await Promise.all([
@@ -8,15 +9,20 @@ export default async function Home() {
   ]);
 
   return (
-    <main>
-      <h2>Profile</h2>
-      <pre>{JSON.stringify(profile, null, 2)}</pre>
+    <>
+      <Hero profile={profile} />
 
-      <h2>Projects ({projects.length})</h2>
-      <pre>{JSON.stringify(projects, null, 2)}</pre>
+      {/* Temporary debug output — will be replaced as sections are built */}
+      <div>
+        <h2>Profile</h2>
+        <pre>{JSON.stringify(profile, null, 2)}</pre>
 
-      <h2>Experiences ({experiences.length})</h2>
-      <pre>{JSON.stringify(experiences, null, 2)}</pre>
-    </main>
+        <h2>Projects ({projects.length})</h2>
+        <pre>{JSON.stringify(projects, null, 2)}</pre>
+
+        <h2>Experiences ({experiences.length})</h2>
+        <pre>{JSON.stringify(experiences, null, 2)}</pre>
+      </div>
+    </>
   );
 }
