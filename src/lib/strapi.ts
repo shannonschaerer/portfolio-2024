@@ -38,7 +38,7 @@ export async function getProjects(): Promise<Project[]> {
 
 export async function getExperiences(): Promise<Experience[]> {
   const res = await fetchStrapi<StrapiCollection<Experience>>(
-    '/api/experiences?populate=*'
+    '/api/experiences?populate=*&sort=StartDate:desc'
   );
   return res.data;
 }
