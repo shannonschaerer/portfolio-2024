@@ -9,6 +9,7 @@
   --color-border:     #E2E0DA;
   --color-accent:     #595959;
   --color-on-accent:  #F8F7F4;
+  --color-focus-ring: #4A6FA5;
 
   /* Typography */
   --text-xs:   0.75rem;
@@ -52,4 +53,5 @@
   --color-border:     #2E2E2E;
   --color-accent:     #A8A8A8;
   --color-on-accent:  #141414;
+  --color-focus-ring: #7BA3CC;
 }

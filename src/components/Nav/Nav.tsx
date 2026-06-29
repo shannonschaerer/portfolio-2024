@@ -7,7 +7,8 @@ export default function Nav() {
     <header className={styles.header}>
       <nav className={styles.nav} aria-label="Main navigation">
         <a href="#hero" className={styles.logo}>
-          {siteConfig.logoText}
+          <span aria-hidden="true">{siteConfig.logoText}</span>
+          <span className="sr-only">{siteConfig.siteName} — home</span>
         </a>
         <ul className={styles.links} role="list">
           {siteConfig.navLinks.map(({ label, href }) => (

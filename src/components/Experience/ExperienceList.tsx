@@ -29,15 +29,17 @@ export default function ExperienceList({ experiences }: ExperienceListProps) {
 
   return (
     <div className={styles.entries}>
+      <div id="experience-entries">
       {experiences.map((exp, i) => (
         <article
           key={exp.documentId}
           className={styles.entry}
           hidden={!expanded && i >= INITIAL_COUNT}
+          aria-label={`${exp.Company ?? 'Unknown company'} — ${exp.Role ?? 'Unknown role'}`}
         >
           <header className={styles.entryHeader}>
             <div className={styles.entryMeta}>
-              {exp.Company && <p className={styles.company}>{exp.Company}</p>}
+              {exp.Company && <h3 className={styles.company}>{exp.Company}</h3>}
               {exp.Role && <p className={styles.role}>{exp.Role}</p>}
               {exp.Location && <p className={styles.location}>{exp.Location}</p>}
             </div>
@@ -65,12 +67,14 @@ export default function ExperienceList({ experiences }: ExperienceListProps) {
           )}
         </article>
       ))}
+      </div>
 
       {hasMore && (
         <button
           type="button"
           className={styles.toggleButton}
           aria-expanded={expanded}
+          aria-controls="experience-entries"
           aria-label={ariaLabel}
           onClick={() => setExpanded((e) => !e)}
         >

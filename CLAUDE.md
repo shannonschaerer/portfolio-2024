@@ -129,7 +129,8 @@ Light and dark mode both required from the start.
   --color-text:       #1A1A1A;
   --color-text-muted: #6B6B6B;
   --color-border:     #E2E0DA;
-  --color-accent:     #2D5BE3;
+  --color-accent:     #595959;
+  --color-focus-ring: #4A6FA5;
 }
 
 /* Dark mode */
@@ -139,7 +140,8 @@ Light and dark mode both required from the start.
   --color-text:       #F0EEE9;
   --color-text-muted: #9A9A9A;
   --color-border:     #2E2E2E;
-  --color-accent:     #6B8FF0;
+  --color-accent:     #A8A8A8;
+  --color-focus-ring: #7BA3CC;
 }
 ```
 
@@ -147,7 +149,7 @@ All combinations must meet WCAG AA contrast (4.5:1 for text, 3:1 for UI componen
 
 ### Typography
 - **Display/headings:** Playfair Display (Google Fonts, via `next/font/google`)
-- **Body:** Inter (Google Fonts, via `next/font/google`)
+- **Body:** DM Sans (Google Fonts, via `next/font/google`)
 
 ```css
 --text-xs:   0.75rem;    /* 12px — labels, badges */
@@ -192,7 +194,79 @@ Style Radix components via data attributes — never override their internals:
 Never override Radix focus management. Use `--color-accent` for all focus rings:
 ```css
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-focus-ring);
   outline-offset: 2px;
 }
 ```
+---
+ 
+## Accessibility Standards & References
+ 
+### Gold standard references
+For any interactive component, consult these official sources before writing code:
+ 
+1. **W3C WAI-ARIA Authoring Practices Guide (APG)**
+   https://www.w3.org/WAI/ARIA/apg/patterns/
+   The official patterns for every interactive component — dialogs, accordions, tabs,
+   carousels, menus. These are the rules, not suggestions.
+2. **GOV.UK Design System**
+   https://design-system.service.gov.uk/components/
+   The most rigorously tested, accessible, and user-friendly design framework publicly
+   available. Use for real-world implementation reference.
+### When to use which reference
+- **Radix UI component exists** → use Radix. It implements APG patterns already.
+  Trust it, don't re-implement manually.
+- **No Radix primitive available** → reference W3C APG pattern first, then GOV.UK
+  for real-world implementation. Never copy from random sites or GitHub examples.
+- **Never scrape a live website** (Apple, a bank, etc.) for accessibility patterns —
+  you get the visual CSS but miss the invisible ARIA and focus management.
+### Per-component accessibility checklist
+Run this before marking any component done:
+ 
+- [ ] Uses correct semantic HTML element (not a div pretending to be a button)
+- [ ] Heading hierarchy is correct and unbroken (h1 → h2 → h3, no skipping)
+- [ ] All interactive elements reachable and operable by keyboard alone
+- [ ] `aria-label` or `aria-labelledby` on all landmark regions
+- [ ] `aria-expanded`, `aria-controls`, `aria-hidden` used correctly where needed
+- [ ] Visible focus ring on every focusable element (`:focus-visible`, never `outline: none`)
+- [ ] Color contrast passes WCAG AA (4.5:1 text, 3:1 UI components) in both light and dark mode
+- [ ] No information conveyed by color alone
+- [ ] Images have meaningful `alt` text (or `alt=""` if decorative)
+- [ ] `[hidden]` attribute used for truly hidden content (not just `visibility: hidden`)
+- [ ] Tested with keyboard navigation (Tab, Shift+Tab, Enter, Space, Escape, Arrow keys)
+- [ ] Tested with VoiceOver on Mac (Cmd + F5)
+### Automated testing tools
+ 
+**During development (run on each component as built):**
+- axe DevTools browser extension — one-click scan of current page
+- Accessibility Insights (Microsoft, free Chrome extension)
+**In the test suite (add before site goes live):**
+- `jest-axe` — write accessibility assertions in unit tests:
+```ts
+it('has no accessibility violations', async () => {
+  const { container } = render(<ComponentName />);
+  const results = await axe(container);
+  expect(results).toHaveNoViolations();
+});
+```
+ 
+**Manual testing (do a full pass when site is complete):**
+- Tab through the entire page — every interactive element must be reachable
+- VoiceOver on Mac: Cmd + F5 to enable, navigate by headings (H key) and landmarks (W key)
+- Test with OS dark mode + site dark mode both on and off
+### Prompt pattern for accessible components
+When building any interactive component, use this prompt structure:
+ 
+> "I need to build [component]. Please read the official W3C APG pattern at
+> [specific URL] and implement it strictly based on that reference.
+> Ensure [specific behaviour e.g. focus trap, Escape key, arrow key navigation]
+> exactly as the documentation specifies."
+ 
+This eliminates hallucinations and guarantees compliance.
+ 
+---
+ 
+## Current status
+Hero, About, and Experience sections built and connected to Strapi.
+Dark mode toggle working with OS preference detection.
+Next: Projects section.
