@@ -1,0 +1,201 @@
+/* ── Section shell ───────────────────────────────────────── */
+
+.section {
+  padding-block: var(--space-16);
+}
+
+/* ── Shared row grid ─────────────────────────────────────────
+   Label row, controls row, and static fallback all use the
+   same 1fr / 3fr grid so they align with every other section.
+   ──────────────────────────────────────────────────────────── */
+
+.headerRow,
+.controlsRow,
+.staticWrapper {
+  max-width: var(--content-max-w);
+  margin-inline: auto;
+  padding-inline: var(--content-padding);
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding-top: 0.3em;
+}
+
+/* ── Full-bleed track row ────────────────────────────────────
+   overflow: clip — clips the track without creating a scroll
+   container (overflow: hidden would).
+   ──────────────────────────────────────────────────────────── */
+
+.trackWrapper {
+  overflow: clip;
+  margin-block: var(--space-6);
+}
+
+/* Semantic carousel wrappers — no visual styles needed */
+.carousel,
+.liveRegion {
+  /* structural only */
+}
+
+.track {
+  display: flex;
+  gap: var(--space-6);    /* desktop gap — 48px */
+  will-change: transform;
+  /*
+    Hidden until useEffect fires, sets card widths, and positions
+    the track at the 3fr column left edge. Prevents a flash of
+    unsized, untransformed slides on first paint.
+  */
+  visibility: hidden;
+}
+
+@media (max-width: 1024px) {
+  .track { gap: var(--space-4); }   /* tablet — 32px */
+}
+
+@media (max-width: 640px) {
+  .track { gap: var(--space-3); }   /* mobile — 24px */
+}
+
+.slide {
+  flex: 0 0 auto;    /* width set per-slide by JS */
+  min-width: 0;
+  background: var(--color-bg-subtle);
+  padding: var(--space-4);
+}
+
+/* ── Slide content ───────────────────────────────────────── */
+
+.blockquote {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  height: 100%;
+}
+
+.quote {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.translationNote {
+  font-size: var(--text-xs);
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+
+.author {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  font-style: normal;
+  color: var(--color-text);
+}
+
+.attributionDetail {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.year {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ── Show more button ────────────────────────────────────── */
+
+.showMoreButton {
+  width: fit-content;   /* don't stretch to fill the 3fr grid column */
+  padding: var(--space-1) var(--space-3);
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-text);
+  border-radius: 0;
+  font-size: var(--text-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.showMoreButton:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.showMoreButton:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ── Static grid (prefers-reduced-motion only) ───────────── */
+
+.staticWrapper {
+  display: none;
+}
+
+.staticGrid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.staticCard {
+  background: var(--color-bg-subtle);
+  padding: var(--space-4);
+}
+
+/* ── prefers-reduced-motion ──────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .trackWrapper  { display: none; }
+  .controlsRow   { display: none; }
+  .staticWrapper { display: grid; }   /* re-activates the shared row grid */
+  .staticGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);   /* desktop: 2 columns */
+    gap: var(--space-4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (max-width: 1024px) {
+  .staticGrid { grid-template-columns: 1fr; }   /* tablet + mobile: 1 column */
+}
+
+/* ── Responsive — collapse to single column at mobile ────── */
+
+@media (max-width: 640px) {
+  .headerRow,
+  .controlsRow,
+  .staticWrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .label {
+    padding-top: 0;
+  }
+}

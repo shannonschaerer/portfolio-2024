@@ -27,8 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`} suppressHydrationWarning>
       <head>
-        {/* Runs before first paint: localStorage → prefers-color-scheme → light */}
-        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme');if(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}})();` }} />
+        <script src="/theme-init.js" />
       </head>
       <body>
         <a href="#main" className="skip-link">

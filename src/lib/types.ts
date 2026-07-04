@@ -73,6 +73,19 @@ export type Experience = {
   Badges: Badge[];
 };
 
+export type Testimonial = {
+  id: number;
+  documentId: string;
+  Quote: string | null;
+  QuoteOriginal: string | null;
+  Translated: boolean | null;
+  Author: string | null;
+  Company: string | null;
+  Role: string | null;
+  Year: string | null;
+  Order: number | null;
+};
+
 export type Profile = {
   id: number;
   documentId: string;

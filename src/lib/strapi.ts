@@ -1,4 +1,4 @@
-import type { StrapiSingle, StrapiCollection, Profile, Project, Experience } from './types';
+import type { StrapiSingle, StrapiCollection, Profile, Project, Experience, Testimonial } from './types';
 
 const STRAPI_URL = process.env.STRAPI_URL;
 const STRAPI_API_TOKEN = process.env.STRAPI_API_TOKEN;
@@ -39,6 +39,13 @@ export async function getProjects(): Promise<Project[]> {
 export async function getExperiences(): Promise<Experience[]> {
   const res = await fetchStrapi<StrapiCollection<Experience>>(
     '/api/experiences?populate=*&sort=StartDate:desc'
+  );
+  return res.data;
+}
+
+export async function getTestimonials(): Promise<Testimonial[]> {
+  const res = await fetchStrapi<StrapiCollection<Testimonial>>(
+    '/api/testimonials?sort=Order:asc'
   );
   return res.data;
 }
