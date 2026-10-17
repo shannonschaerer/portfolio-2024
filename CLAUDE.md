@@ -267,6 +267,7 @@ This eliminates hallucinations and guarantees compliance.
 ---
  
 ## Current status
-Hero, About, and Experience sections built and connected to Strapi.
-Dark mode toggle working with OS preference detection.
-Next: Projects section.
+Known issue: next/image is set to unoptimized={true} 
+as a temporary fix — remotePatterns in next.config.ts 
+is not loading .env.local correctly. Must be fixed 
+before production deployment.

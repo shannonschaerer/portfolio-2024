@@ -29,9 +29,9 @@ export async function getProfile(): Promise<Profile> {
   return res.data;
 }
 
-export async function getProjects(): Promise<Project[]> {
+export async function getFeaturedProjects(): Promise<Project[]> {
   const res = await fetchStrapi<StrapiCollection<Project>>(
-    '/api/projects?populate=*'
+    '/api/projects?populate=*&filters[Featured][$eq]=true'
   );
   return res.data;
 }
